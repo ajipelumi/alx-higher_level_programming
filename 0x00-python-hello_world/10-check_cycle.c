@@ -13,15 +13,16 @@ int check_cycle(listint_t *list)
 {
 	listint_t *hold, *temp;
 
-	hold = list;
-	temp = list;
+	hold = list; /* hold the address of list */
+	temp = list; /* temp also holds the address of list */
+	/* use temp to loop through linked list */
 	while (temp->next != NULL)
 	{
-		temp = temp->next;
-		if (temp->next == hold)
+		temp = temp->next; /* go to next node */
+		if (temp->next == hold) /* if address is of head is met */
 		{
-			return (1);
+			return (1); /* list has a cycle */
 		}
 	}
-	return (0);
+	return (0); /* list has no cycle */
 }
