@@ -4,4 +4,3 @@ for i in range(0, 100):
         print("{0:02d}".format(i), end=', ')
     else:  # last number
         print("{0:d}".format(i))
-    
