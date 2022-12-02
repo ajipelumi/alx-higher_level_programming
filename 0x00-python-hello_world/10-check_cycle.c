@@ -13,6 +13,10 @@ int check_cycle(listint_t *list)
 {
 	listint_t *hold, *temp;
 
+	if (list == NULL)
+	{
+		return (0); /* list has no cycle */
+	}
 	hold = list; /* hold the address of list */
 	temp = list; /* temp also holds the address of list */
 	/* use temp to loop through linked list */
