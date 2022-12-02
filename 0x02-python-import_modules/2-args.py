@@ -19,4 +19,3 @@ if __name__ == "__main__":
         for i in range(1, len(argv)):
             print("{:d}: {:s}".format(count, argv[i]))
             count += 1
-            
