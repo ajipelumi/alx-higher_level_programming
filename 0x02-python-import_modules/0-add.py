@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+# script should not run if imported
 if __name__ == "__main__":
     import add_0 as addition
 
