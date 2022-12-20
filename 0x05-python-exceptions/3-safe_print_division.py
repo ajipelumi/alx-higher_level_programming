@@ -7,11 +7,9 @@ def safe_print_division(a, b):
     Return: the value of the division, otherwise: None
     """
     try:
-        res = a / b  # divide integers
-        return res
+        result = a / b  # divide integers
     except ZeroDivisionError:  # divisor is zero
-        res = 0
-        print("Inside result: None")
+        result = None
     finally:
-        if res != 0:
-            print("Inside result: {}".format(res))
+        print("Inside result: {}".format(result))
+    return result
