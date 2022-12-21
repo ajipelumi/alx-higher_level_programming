@@ -50,6 +50,8 @@ class Square:
         pos = self.__position
         if num == 0:
             print()  # newline
+        for i in range(pos[1]):
+            print("")
         for i in range(num):
             count = 0
             for j in range(num):
