@@ -49,7 +49,8 @@ class Square:
         num = self.__size
         pos = self.__position
         if num == 0:
-            print()  # newline
+            print("")
+            return
         for i in range(pos[1]):
             print("")
         for i in range(num):
@@ -60,4 +61,4 @@ class Square:
                         print(" ", end="")  # fill with spaces
                 count = pos[0]
                 print("#", end="")
-            print()  # newline
+            print()
