@@ -45,20 +45,12 @@ class Square:
         return self.__size ** 2
 
     def my_print(self):
-        """ Prints in stdout the square with the character #. """
-        num = self.__size
-        pos = self.__position
-        if num == 0:
-            print("")
+        """ Print to STDOUT. """
+        if self.__size == 0:
+            print('')
             return
-        for i in range(pos[1]):
-            print("")
-        for i in range(num):
-            count = 0
-            for j in range(num):
-                for k in range(pos[0]):
-                    if count is not pos[0]:
-                        print(" ", end="")  # fill with spaces
-                count = pos[0]
-                print("#", end="")
-            print()
+
+        for i in range(self.__position[1]):
+            print('')
+        for i in range(self.__size):
+            print("{}{}".format(' ' * self.__position[0], '#' * self.__size))
