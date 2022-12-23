@@ -5,7 +5,7 @@ import math
 
 class MagicClass:
     """ Define a Circle """
-    def __init__(self, radius):
+    def __init__(self, radius=0):
         """ Initialize data. """
         self.radius = 0
         if type(radius) is not int and type(radius) is not float:
