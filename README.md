@@ -11,6 +11,15 @@ It has efficient high-level data structures and a simple but effective approach 
 Python’s elegant syntax and dynamic typing, together with its interpreted nature, make it an ideal language
 for scripting and rapid application development in many areas on most platforms.
 
+With Python you can do everything:
+- GUI applications.
+- Web apps.
+- Scrape data from websites.
+- Analyse Data.
+- System administration utilities.
+- Game Development.
+- Data Science.
+
 The name of the programming language comes from an old BBC television comedy sketch series called "Monty Python's Flying Circus".
 
 The folders in this repository are projects that treat key concepts in Python.
