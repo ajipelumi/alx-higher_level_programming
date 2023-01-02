@@ -62,12 +62,4 @@ class Rectangle:
 
     def __repr__(self):
         """ Returns a string representation. """
-        str = ''
-        if self.__width == 0 or self.__height == 0:
-            return str
-
-        for i in range(self.__height):
-            str += "{}".format('#' * self.__width)
-            if (i + 1) != self.__height:
-                str += '\n'
-        return str
+        return f"{self.__class__.__name__}({self.width}, {self.height})"
