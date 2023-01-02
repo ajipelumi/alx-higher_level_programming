@@ -53,16 +53,16 @@ class Rectangle:
             return 2 * (self.width + self.height)
 
     def __str__(self):
-        """ Returns a string to print to STDOUT. """
-        str = ''
+        ret = ''
         if self.__width == 0 or self.__height == 0:
-            return str
+            return ret
 
         for i in range(self.__height):
-            str += "{}".format(self.print_symbol * self.__width)
+            # cast print symbol as a string as it could be of any type
+            ret += str(self.print_symbol) * self.__width
             if (i + 1) != self.__height:
-                str += '\n'
-        return str
+                ret += '\n'
+        return ret
 
     def __repr__(self):
         """ Returns an object representation in the form of a string. """
