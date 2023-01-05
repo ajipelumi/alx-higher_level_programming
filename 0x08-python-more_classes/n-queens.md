@@ -5,7 +5,7 @@ Image Credit: GeeksForGeeks
 
 The N **Queens** puzzle is the challenge of placing N non-attacking queens on an **N×N chessboard**.
 
-This is a breakdown of how I approached and solved the task. The executable file is [101-nqueens.py](https://github.com/ajipelumi/alx-higher_level_programming/blob/dd89a00435fdf4172c36431afc9237fd372315c9/0x08-python-more_classes/101-nqueens.py) located in this directory.
+This is a breakdown of how I approached and solved the task.
 
 ## Documentation
 - Usage: `nqueens N`
@@ -44,11 +44,40 @@ starting from the row where we left off.
 5. This process is repeated until we have either found a solution or determined that no solution exists.
 
 ## Pseudocode
-import sys module
-check for number of arguments passed to the command-line (length of arguments should be 2).
-check if the argument passed is an integer.
-check if integer is greater than 4 (our documentation requires that N must be greater than or equal to 4).
-define global variable `board` to position our queens.
-define `col` set that keeps track of each queens position on every column.
-define `posDiag` set that keeps track of each queens positive diagonals.
-define `negDiag` set that keeps track of each queens negative diagonals.
+- import sys module
+- check for number of arguments passed to the command-line (length of arguments should be 2).
+- check if the argument passed is an integer.
+- check if integer is greater than 4 (our documentation requires that N must be greater than or equal to 4).
+- define global variable `board` to position our queens.
+- define `col` set that keeps track of each queens position on every column.
+
+<img src="https://github.com/ajipelumi/alx-higher_level_programming/blob/e3710814331b632aef73d939b6303f2cd3ae145b/images/col_nqueens.png" alt="N Queens Column">
+
+- define `posDiag` set that keeps track of each queens positive diagonals.
+
+<img src="https://github.com/ajipelumi/alx-higher_level_programming/blob/e3710814331b632aef73d939b6303f2cd3ae145b/images/pos_nqueens.png" alt="N Queens PosDiag">
+
+- define `negDiag` set that keeps track of each queens negative diagonals.
+
+<img src="https://github.com/ajipelumi/alx-higher_level_programming/blob/e3710814331b632aef73d939b6303f2cd3ae145b/images/neg_nqueens.png" alt="N Queens NegDiag">
+
+- call our backtrack function which takes the following parameters:
+  - r: represents row 0 which is our starting point
+  - n: is our N chessboard
+  - col: our column set
+  - posDiag: positive diagonals
+  - negDiag: negative diagonals
+  
+ - because `backtrack` is a recursive function, we set a base condition for the recursion to end when there are no more rows.
+ - at that point we want to print all posiible solutions so we call the `result` function.
+ - inside `backtrack`, we traverse through n columns and check if the queen's position is in *col*, *posDiag* or *negDiag*, if a position is found in any of them this would mean that the queen faces an attack from one of the queens so the queen is moved to the next column
+ - board is updated to *1* to indicate that a queen is present in that position and backtrack is called again but row increases by 1.
+ - if the columns are exhausted and there is no where to place the queen, the previous queen is called and her position is changed, the board is also updated to *0* to reflect that change.
+ 
+ 
+## Source Code
+Click [101-nqueens.py](https://github.com/ajipelumi/alx-higher_level_programming/blob/dd89a00435fdf4172c36431afc9237fd372315c9/0x08-python-more_classes/101-nqueens.py) to see the source code which is also located in this directory.
+
+To use code, download and make file executable then run with argument.
+
+Thank you.
