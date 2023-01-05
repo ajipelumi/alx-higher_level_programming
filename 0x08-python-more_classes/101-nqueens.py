@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Placing N non-attacking queens on an NN chessboard. """
+""" Placing N non-attacking queens on an NxN chessboard. """
 import sys
 
 
