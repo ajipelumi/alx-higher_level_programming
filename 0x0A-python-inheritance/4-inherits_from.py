@@ -5,10 +5,16 @@
 
 def inherits_from(obj, a_class):
     """
-    checks for inheritance
+    checks for subclass
     obj: object/instance to check
     a_class: specified class
-    return: True if the object is an instance inherited
-    (directly or indirectly), otherwise False.
+    return: True if the object is a subclass of
+    specified class, otherwise False.
     """
-    return issubclass(type(obj), a_class)
+    # get all relevant classes in method-resolution order
+    mro = type(obj).mro()
+    mro.pop(0)  # a class is a subclass of itself so we pop it
+    if a_class in mro:
+        return True
+    else:
+        return False
