@@ -29,4 +29,4 @@ try:
     save_to_json_file(new_list, file)
 except Exception:
     # file does not exist so save our arguments to JSON file
-    save_to_json_file(my, file)
+    save_to_json_file(my_list, file)
