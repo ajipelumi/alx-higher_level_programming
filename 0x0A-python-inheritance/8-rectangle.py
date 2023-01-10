@@ -3,9 +3,9 @@
 
 
 class Rectangle(BaseGeometry):
-    """ Rectangle Class. """
+    """ Defines a rectangle. """
     def __init__(self, width, height):
-        """ Initialize data. """
+        """ Initializes the data. """
         self.integer_validator("width", width)
         self.integer_validator("height", height)
         self.__width = width
