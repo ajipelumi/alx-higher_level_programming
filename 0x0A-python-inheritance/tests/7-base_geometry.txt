@@ -43,3 +43,7 @@ Now use it:
     >>> bg.integer_validator("size", {1, 2})
     Traceback (most recent call last):
     TypeError: size must be an integer
+
+    >>> bg.integer_validator("size", 5+3j)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
