@@ -31,3 +31,11 @@ Now use it:
     >>> bg.integer_validator("size", True)
     Traceback (most recent call last):
     TypeError: size must be an integer
+
+    >>> bg.integer_validator("size", False)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+    >>> bg.integer_validator("size", [1, 2])
+    Traceback (most recent call last):
+    TypeError: size must be an integer
