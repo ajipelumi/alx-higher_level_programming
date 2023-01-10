@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 """ JSON serialization of an object. """
 
-import json
-
 
 def class_to_json(obj):
     """
@@ -11,5 +9,5 @@ def class_to_json(obj):
     Return: the dictionary description.
     """
     # Get instance attributes/variables with built-in (vars)
-    new = json.dumps(vars(obj))
+    new = vars(obj)
     return new
