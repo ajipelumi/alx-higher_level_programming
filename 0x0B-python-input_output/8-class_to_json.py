@@ -10,5 +10,5 @@ def class_to_json(obj):
     Return: the dictionary description.
     """
     # Get instance attributes/variables with built-in (vars)
-    new = json.dumps(vars(obj))
+    new = json.dumps(obj.__dict__)
     return new
