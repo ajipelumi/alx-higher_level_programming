@@ -7,6 +7,7 @@ class Rectangle(BaseGeometry):
     """ Defines a rectangle. """
     def __init__(self, width, height):
         """ Initializes the data. """
+        super().__init__()
         self.integer_validator("width", width)
         self.integer_validator("height", height)
         self.__width = width
@@ -18,5 +19,5 @@ class Rectangle(BaseGeometry):
 
     def __str__(self):
         """ Returns a string to print to STDOUT. """
-        str = f'[{self.__class__.__name__}] {self.__width}/{self.__height}'
+        str = f'[Rectangle] {self.__width}/{self.__height}'
         return str

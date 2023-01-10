@@ -7,6 +7,7 @@ class Square(Rectangle):
     """ Square Class. """
     def __init__(self, size):
         """ Initialize data. """
+        super().__init__(size, size)
         self.integer_validator("size", size)
         self.__size = size
 
@@ -16,5 +17,5 @@ class Square(Rectangle):
 
     def __str__(self):
         """ Returns a string to print to STDOUT. """
-        str = f'[{self.__class__.__name__}] {self.__size}/{self.__size}'
+        str = f'[Square] {self.__size}/{self.__size}'
         return str
