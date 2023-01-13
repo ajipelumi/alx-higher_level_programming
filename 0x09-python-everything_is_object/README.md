@@ -1,6 +1,6 @@
-An Object is an instance of a Class. A class is like a blueprint while an instance is a copy of the class with actual values.
+An **Object** is an instance of a **Class**. A class is like a blueprint while an instance is a copy of the class with actual values.
 
-Objects are basically an encapsulation of data variables and methods acting on that data into a single entity.
+**Objects** are basically an encapsulation of data variables and methods acting on that data into a single entity.
 
 Instance defining represent memory allocation necessary for storing the actual data of variables.
 Each time we create an object of class, the copy of each data variables defined in that class is created.
