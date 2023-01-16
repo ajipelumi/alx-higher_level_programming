@@ -24,7 +24,7 @@ class Square(Rectangle):
         # Reassign to avoid pycodestyle error
         x = self.x
         y = self.y
-        size = self.width
+        size = self.size
 
         buf = f'[Square] ({self.id}) {x}/{y} - {size}'
         return buf
@@ -41,3 +41,14 @@ class Square(Rectangle):
         # Assign value to key
         for key, value in kwargs.items():
             setattr(self, key, value)
+
+    def to_dictionary(self):
+        """ Dictionary representation of a Square. """
+        # Reassign to avoid pycodestyle error
+        id = self.id
+        size = self.size
+        x = self.x
+        y = self.y
+
+        my_dict = {'id': id, 'size': size, 'x': x, 'y': y}
+        return my_dict
