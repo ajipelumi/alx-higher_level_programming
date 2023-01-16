@@ -25,11 +25,9 @@ class Base:
         @list_dictionaries: a list of dictionaries.
         """
 
-        my_list = []
-
         # Check if list_dictionaries is empty
         if list_dictionaries is None:
-            return my_list
+            return "[]"
 
         # list_dictionaries is not empty
         my_list = json.dumps(list_dictionaries)
