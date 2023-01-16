@@ -20,6 +20,10 @@ class Rectangle(Base):
     @width.setter
     def width(self, width):
         """ Set property. """
+        if type(width) != int:
+            raise TypeError('width must be an integer')
+        if width <= 0:
+            raise ValueError('width must be > 0')
         self.__width = width
 
     @property
@@ -30,6 +34,10 @@ class Rectangle(Base):
     @height.setter
     def height(self, height):
         """ Set property. """
+        if type(height) != int:
+            raise TypeError('height must be an integer')
+        if height <= 0:
+            raise ValueError('height must be > 0')
         self.__height = height
 
     @property
@@ -40,6 +48,10 @@ class Rectangle(Base):
     @x.setter
     def x(self, x):
         """ Set property. """
+        if type(x) != int:
+            raise TypeError('x must be an integer')
+        if x < 0:
+            raise ValueError('x must be >= 0')
         self.__x = x
 
     @property
@@ -50,4 +62,30 @@ class Rectangle(Base):
     @y.setter
     def y(self, y):
         """ Set property. """
+        if type(y) != int:
+            raise TypeError('y must be an integer')
+        if y < 0:
+            raise ValueError('y must be >= 0')
         self.__y = y
+
+    def area(self):
+        """ Area of a rectangle. """
+        return self.width * self.height
+
+    def display(self):
+        """ Prints character '#' to stdout."""
+        for i in range(self.y):
+            print(" ")
+        for i in range(self.height):
+            print("{}{}".format(' ' * self.x, '#' * self.width))
+
+    def __str__(self):
+        """ Define string representation of Rectangle class. """
+        # Reassign variables to avoid pycodestyle error
+        x = self.x
+        y = self.y
+        width = self.width
+        height = self.height
+
+        buf = f'[Rectangle] ({self.id}) {x}/{y} - {width}/{height}'
+        return buf
