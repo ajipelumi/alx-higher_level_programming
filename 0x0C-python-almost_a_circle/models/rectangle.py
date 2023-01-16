@@ -102,3 +102,15 @@ class Rectangle(Base):
         # Assign value to key
         for key, value in kwargs.items():
             setattr(self, key, value)
+
+    def to_dictionary(self):
+        """ Dictionary representation of a Rectangle. """
+        # Reassign to avoid pycodestyle error
+        id = self.id
+        width = self.width
+        height = self.height
+        x = self.x
+        y = self.y
+
+        my_dict = {'id': id, 'width': width, 'height': height, 'x': x, 'y': y}
+        return my_dict
