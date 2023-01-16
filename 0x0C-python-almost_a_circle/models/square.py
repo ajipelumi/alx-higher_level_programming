@@ -9,6 +9,16 @@ class Square(Rectangle):
         # Call super class to initialize attributes
         super().__init__(size, size, x, y, id)
 
+    @property
+    def size(self):
+        """ Retrieve size. """
+        return self.width
+
+    @size.setter
+    def size(self, size):
+        """ Set size property. """
+        self.width = self.height = size
+
     def __str__(self):
         """ Define string representation of Square class."""
         # Reassign to avoid pycodestyle error
