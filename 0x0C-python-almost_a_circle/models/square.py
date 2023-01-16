@@ -28,3 +28,16 @@ class Square(Rectangle):
 
         buf = f'[Square] ({self.id}) {x}/{y} - {size}'
         return buf
+
+    def update(self, *args, **kwargs):
+        """ Assigns an argument to each attribute. """
+        attr = ('id', 'size', 'x', 'y')
+
+        # Assign each element of args to attr
+        for i in range(len(attr)):
+            if i < len(args):
+                setattr(self, attr[i], args[i])
+
+        # Assign value to key
+        for key, value in kwargs.items():
+            setattr(self, key, value)
