@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Rectangle class. """
+""" Rectangle class that inherits from Base. """
 
 
 class Rectangle(Base):

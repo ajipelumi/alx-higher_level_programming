@@ -18,8 +18,13 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
+    @staticmethod
     def to_json_string(list_dictionaries):
-        """ JSON string representation of list_dictionaries. """
+        """
+        JSON string representation of list_dictionaries.
+        @list_dictionaries: a list of dictionaries.
+        """
+
         my_list = []
 
         # Check if list_dictionaries is empty
