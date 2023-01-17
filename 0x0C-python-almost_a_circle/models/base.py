@@ -83,3 +83,17 @@ class Base:
         # json_string is not empty
         my_list = json.loads(json_string)
         return my_list
+
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        Instance with all attributes already set.
+        @dictionary: a double pointer to a dictionary.
+        """
+
+        # Create Rectangle instance with dummy attributes
+        new_rect = cls(1, 2)
+
+        # Call update instance method
+        new_rect.update(dictionary)
+        return new_rect
