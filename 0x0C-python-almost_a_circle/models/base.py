@@ -92,8 +92,14 @@ class Base:
         """
 
         # Create Rectangle instance with dummy attributes
-        new_rect = cls(1, 2)
+        if cls.__name__ == "Rectangle":
+            new = cls(1, 2)
+
+        # Create Square instance with dummy attributes
+        elif cls.__name__ == "Square":
+            new = cls(1)
 
         # Call update instance method
-        new_rect.update(**dictionary)
-        return new_rect
+        new.update(**dictionary)
+
+        return new
