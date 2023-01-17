@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Base of all other classes. """
 import json
+import os.path
 
 
 class Base:
@@ -103,3 +104,36 @@ class Base:
         new.update(**dictionary)
 
         return new
+
+    @classmethod
+    def load_from_file(cls):
+        """ Returns a list of instances. """
+
+        # Create an empty list
+        my_list = []
+
+        filename = cls.__name__ + ".json"
+
+        # Check if file exists
+        file_exists = os.path.exists(filename)
+        if file_exists is False:
+            return my_list  # return empty list
+
+        # File exists
+        else:
+
+            # Open file with read access
+            with open(filename, "r", encoding='utf-8') as f:
+                # Read file to memory
+                line = f.read()
+
+            # Get list of json string representation
+            json_list = cls.from_json_string(line)
+
+            # Iterate through every dictionary in the list
+            for item in json_list:
+
+                # Create instances of each dictionary item and append
+                my_list.append(cls.create(**item))
+
+            return my_list  # return list of instances
