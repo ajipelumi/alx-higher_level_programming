@@ -95,5 +95,5 @@ class Base:
         new_rect = cls(1, 2)
 
         # Call update instance method
-        new_rect.update(dictionary)
+        new_rect.update(**dictionary)
         return new_rect
