@@ -32,3 +32,36 @@ class Base:
         # list_dictionaries is not empty
         my_list = json.dumps(list_dictionaries)
         return my_list
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """
+        Writes the JSON string of list_objs to a file.
+        @list_objs: a list of instances who inherits from Base.
+        """
+
+        # Create an empty list to hold the JSON string
+        json_list = []
+
+        # Check if list of instance is empty
+        if list_objs is None:
+
+            # Save an empty list
+            with open(cls.__name__ + ".json", "w", encoding='utf-8') as f:
+                f.write(str(json_list))
+
+        # List is not empty
+        else:
+
+            # Iterate through each object in the list
+            for item in list_objs:
+
+                # Get dict representation and append to json_list
+                json_list.append(item.to_dictionary())
+
+            # Convert dict representation to JSON string
+            json_str = cls.to_json_string(json_list)
+
+            # Write the JSON string to file
+            with open(cls.__name__ + ".json", "w", encoding='utf-8') as f:
+                f.write(json_str)
