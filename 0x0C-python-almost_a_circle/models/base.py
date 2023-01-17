@@ -65,3 +65,21 @@ class Base:
             # Write the JSON string to file
             with open(cls.__name__ + ".json", "w", encoding='utf-8') as f:
                 f.write(json_str)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """
+        List of JSON string representation.
+        @json_string: a string representing a list of dictionaries.
+        """
+
+        # Create an empty list
+        my_list = []
+
+        # Check if json_string is empty
+        if json_string is None:
+            return my_list
+
+        # json_string is not empty
+        my_list = json.loads(json_string)
+        return my_list
