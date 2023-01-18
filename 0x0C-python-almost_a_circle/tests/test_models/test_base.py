@@ -39,6 +39,7 @@ class TestBaseClass(unittest.TestCase):
         """ Test JSON string representation. """
         self.assertEqual(Base.to_json_string(None), "[]")
         self.assertEqual(Base.to_json_string([]), "[]")
+        self.assertIsNotNone(Base.to_json_string(None))
         obj = Rectangle(6, 7)
         obj_json = Base.to_json_string([obj.to_dictionary()])
         self.assertIsInstance(obj_json, str)
