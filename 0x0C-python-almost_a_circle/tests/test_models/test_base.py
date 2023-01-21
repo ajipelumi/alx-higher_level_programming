@@ -40,8 +40,23 @@ class TestBaseClass(unittest.TestCase):
         self.assertEqual(Base.to_json_string(None), "[]")
         self.assertEqual(Base.to_json_string([]), "[]")
         self.assertIsNotNone(Base.to_json_string(None))
-        obj = Rectangle(6, 7)
+        obj = Rectangle(6, 7, 0, 0, 5)
         obj_json = Base.to_json_string([obj.to_dictionary()])
         self.assertIsInstance(obj_json, str)
         json_str = '[{"id": 5, "width": 6, "height": 7, "x": 0, "y": 0}]'
         self.assertEqual(obj_json, json_str)
+
+    def test_from_json_string(self):
+        """ Test JSON string to dictionary. """
+        self.assertEqual(Base.from_json_string(None), [])
+        self.assertEqual(Base.from_json_string("[]"), [])
+        obj = Rectangle(6, 7, 0, 0, 6)
+        obj_json = Base.to_json_string([obj.to_dictionary()])
+        obj_json_list = Base.from_json_string(obj_json)
+        self.assertIsInstance(obj_json_list, list)
+        json_list = [{"id": 6, "width": 6, "height": 7, "x": 0, "y": 0}]
+        self.assertEqual(obj_json_list, json_list)
+
+
+if __name__ == '__main__':
+    unittest.main()
