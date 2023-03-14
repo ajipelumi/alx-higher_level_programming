@@ -6,9 +6,10 @@ if (!argv[2]) {
 } else if (isNaN(argv[2])) {
   console.log('Missing size');
 } else {
+  const size = argv[2];
   // loop argv[2] times
   while (argv[2] > 0) {
-    console.log('X' * argv[2]); // log argv[2] times
+    console.log('X'.repeat(size)); // repeat size times
     argv[2]--; // decrement argv[2]
   }
 }
