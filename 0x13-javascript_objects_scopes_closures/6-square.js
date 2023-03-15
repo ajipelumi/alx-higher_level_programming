@@ -1,14 +1,10 @@
 #!/usr/bin/node
-const Rectangle = require('./4-rectangle');
+const ParentSquare = require('./5-square');
 
-class Square extends Rectangle {
-  constructor (size) {
-    super(size, size); // Call super to initialize size
-  }
-
+class Square extends ParentSquare {
   charPrint (character = 'X') {
-    for (let i = this.size; i > 0; i--) {
-      console.log(character.repeat(this.size));
+    for (let i = this.height; i > 0; i--) {
+      console.log(character.repeat(this.width));
     }
   }
 }
