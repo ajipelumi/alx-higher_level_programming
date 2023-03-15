@@ -11,9 +11,8 @@ class Rectangle {
   // Prints the rectangle using the character 'X'
   print () {
     // Loop height times
-    while (this.height > 0) {
+    for (let i = this.height; i > 0; i--) {
       console.log('X'.repeat(this.width));
-      this.height--; // Decrement height
     }
   }
 }
