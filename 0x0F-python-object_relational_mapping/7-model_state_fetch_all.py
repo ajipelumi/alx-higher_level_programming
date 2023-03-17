@@ -13,8 +13,8 @@ if __name__ == '__main__':
 
     # Create engine and session
     call = f'mysql+mysqldb://{db_user}:{db_password}@localhost/{db_name}'
-    engine = create_engine(call)  # Establish connection 
-    session = Session(engine) # Establish conversation with database
+    engine = create_engine(call)  # Establish connection
+    session = Session(engine)  # Establish conversation with database
 
     # Query database to display states table
     states = session.query(State).order_by(State.id).all()
