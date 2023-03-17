@@ -13,7 +13,8 @@ if __name__ == '__main__':
 
     # Command to be executed
     state_name = sys.argv[4]
-    query = "SELECT * FROM states WHERE name = '{}'".format(state_name)
+    query = "SELECT * FROM states WHERE name = '{}' \
+            ORDER BY states.id ASC".format(state_name)
 
     # Use cursor to execute command
     cursor.execute(query)
