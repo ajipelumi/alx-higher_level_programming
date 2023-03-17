@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" Lists all the states with name starting with N. """
 
 if __name__ == '__main__':
     import MySQLdb

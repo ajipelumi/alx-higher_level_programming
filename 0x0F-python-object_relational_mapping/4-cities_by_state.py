@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" Lists all cities from the database in a specific order. """
 
 if __name__ == '__main__':
     import MySQLdb

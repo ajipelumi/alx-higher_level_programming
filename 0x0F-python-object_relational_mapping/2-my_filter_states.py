@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" Displays all values in states table of where name matches the argument. """
 
 if __name__ == '__main__':
     import MySQLdb
