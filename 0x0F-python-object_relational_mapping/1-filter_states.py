@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
 if __name__ == '__main__':
-
     import MySQLdb
     import sys
 
@@ -12,7 +11,7 @@ if __name__ == '__main__':
     cursor = db.cursor()
 
     # Command to be executed
-    query = "SELECT * FROM states ORDER BY states.id ASC"
+    query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id ASC"
 
     # Use cursor to execute command
     cursor.execute(query)
