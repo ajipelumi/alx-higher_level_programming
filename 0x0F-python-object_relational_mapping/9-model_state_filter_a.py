@@ -18,6 +18,6 @@ if __name__ == '__main__':
 
     # Query database to display states table
     states = session.query(State).filter(State.name.contains('a'))\
-            .order_by(State.id)
+        .order_by(State.id)
     for state in states:
         print(f'{state.id}: {state.name}')
