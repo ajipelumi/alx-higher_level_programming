@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Lists all states passed from passed database. """
+""" Displays the first state from passed database. """
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 from model_state import Base, State
@@ -16,7 +16,7 @@ if __name__ == '__main__':
     engine = create_engine(call)  # Establish connection
     session = Session(engine)  # Establish conversation with database
 
-    # Query database to display states table
+    # Query database to display first item in states table
     states = session.query(State).first()
     if states is None:  # States table is empty
         print('Nothing')

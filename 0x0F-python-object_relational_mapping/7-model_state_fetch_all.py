@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Lists all states passed from passed database. """
+""" Lists all states from passed database. """
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 from model_state import Base, State
