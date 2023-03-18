@@ -20,7 +20,9 @@ if __name__ == '__main__':
     session = Session(engine)  # Establish conversation with database
 
     # Query database to filter state objects with letter 'a'
-    states = session.query(State).filter(State.name.contains('a'))\
-        .delete()
+    states = session.query(State).filter(State.name.contains('a')).all()
+    for state in states:
+        # Delete state objects
+        session.delete(state)
     # Commit changes to database
     session.commit()
