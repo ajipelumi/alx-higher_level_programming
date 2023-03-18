@@ -8,10 +8,6 @@ from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 
-# ORM Model
-Base = declarative_base()
-
-
 class City(Base):
     """ City class that inherits from Base. """
     __tablename__ = 'cities'
@@ -21,4 +17,4 @@ class City(Base):
     state_id = Column(Integer, ForeignKey("states.id"),
                       nullable=False)
 
-    state = relationship('State', backref='city')
+    state = relationship('State', backref='cities')
