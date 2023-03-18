@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Displays a state object from passed database. """
+""" Updates a state object from passed database. """
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 from model_state import Base, State
@@ -16,12 +16,8 @@ if __name__ == '__main__':
     engine = create_engine(call)  # Establish connection
     session = Session(engine)  # Establish conversation with database
 
-    # Create instance of States object
-    new_state = State(name='Louisiana')
-    # Add new States object to database
-    session.add(new_state)
+    # Query database to update State object
+    states = session.query(State).filter(State.id == 2)\
+        .update({State.name: 'New Mexico'})
     # Commit changes to database
     session.commit()
-
-    # Display new state id after creation
-    print(new_state.id)
