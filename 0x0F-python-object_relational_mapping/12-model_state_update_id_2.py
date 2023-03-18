@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Adds a new state object to passed database. """
+""" Displays a state object from passed database. """
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 from model_state import Base, State
