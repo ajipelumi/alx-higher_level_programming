@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ Defines City class that inherits from Base. """
-from model_state import Base, State
+from relationship_state import Base, State
 from sqlalchemy.orm import relationship
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
@@ -15,4 +15,4 @@ class City(Base):
     state_id = Column(Integer, ForeignKey("states.id"),
                       nullable=False)
 
-    state = relationship('State', backref='cities')
+    state = relationship('State', back_populates='cities')
