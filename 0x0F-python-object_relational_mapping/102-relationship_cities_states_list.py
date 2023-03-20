@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Displays all State and City objects from passed database. """
+""" Displays all City objects from passed database. """
 from sqlalchemy import create_engine
 from sqlalchemy import asc
 from sqlalchemy.orm import Session
@@ -18,10 +18,7 @@ if __name__ == '__main__':
     engine = create_engine(call)  # Establish connection
     session = Session(engine)  # Establish conversation with database
 
-    # Query database to display all objects
-    states = session.query(State).join(City, State.id == City.state_id)\
-        .order_by(asc(State.id), asc(City.id)).all()
-    for state in states:
-        print(f'{state.id}: {state.name}')
-        for city in state.cities:
-            print(f'    {city.id}: {city.name}')
+    # Query database to display city objects
+    cities = session.query(City).order_by(asc(City.id)).all()
+    for city in cities:
+        print(f'{city.id}: {city.name} -> {city.state.name}')
