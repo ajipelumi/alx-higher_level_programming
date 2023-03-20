@@ -22,7 +22,7 @@ if __name__ == '__main__':
     session = Session(engine)  # Establish conversation with database
 
     # Query database to display all objects
-    states = session.query(State).order_by(asc(State.id)).all()
+    states = session.query(State)
     for state in states:
         print(f'{state.id}: {state.name}')
         for city in state.cities:
