@@ -24,15 +24,12 @@ if __name__ == "__main__":
     # Make post request
     response = requests.post(url, data=values)
 
-    # If response json is empty
-    if not response.json():
-        print('No result')
-
-    # If response json type is not a valid json
-    elif response.headers.get('content-type') != 'application/json':
-        print('Not a valid JSON')
-
-    # If response json is valid
-    else:
+    try:
         content = response.json()
-        print('[{}] {}'.format(content.get('id'), content.get('name')))
+        # If response json is valid
+        if content:
+            print('[{}] {}'.format(content.get('id'), content.get('name')))
+        else:  # If response json is empty
+            print('No result')
+    except ValueError:  # If response json is not valid
+        print('Not a valid JSON')
