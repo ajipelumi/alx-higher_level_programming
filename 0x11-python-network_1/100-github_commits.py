@@ -14,7 +14,7 @@ if __name__ == "__main__":
 
     response = requests.get(url)
     commits = response.json()
-    for commit in reversed(commits):
+    for commit in (commits):
         sha = commit['sha']
         author_name = commit['commit']['author']['name']
         print(f'{sha}: {author_name}')
