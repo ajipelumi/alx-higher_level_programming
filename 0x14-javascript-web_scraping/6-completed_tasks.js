@@ -10,14 +10,11 @@ request(url, (error, response, body) => {
   } else {
     const data = JSON.parse(body);
     const count = {};
-    let id = 1;
     for (const key in data) {
-      if (data[key].userId === id) {
-        if (data[key].completed) {
-          count[id] = count[id] ? count[id] + 1 : 1;
-        }
-      } else {
-        id += 1;
+      const userId = data[key].userId;
+      const completed = data[key].completed;
+      if (completed) {
+        count[userId] = count[userId] ? count[userId] + 1 : 1;
       }
     }
     console.log(count);
