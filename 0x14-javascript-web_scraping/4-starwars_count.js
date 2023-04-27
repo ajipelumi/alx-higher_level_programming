@@ -13,7 +13,7 @@ request(url, (error, response, body) => {
     const data = JSON.parse(body).results;
     for (const key in data) {
       for (const item in data[key].characters) {
-        if (data[key].characters[item].includes(`//swapi-api.alx-tools.com/api/people/${id}`)) {
+        if (data[key].characters[item].includes(`/people/${id}`)) {
           count += 1;
         }
       }
