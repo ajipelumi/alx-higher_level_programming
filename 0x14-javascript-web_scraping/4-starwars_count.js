@@ -2,6 +2,7 @@
 const argv = require('process').argv;
 const request = require('request');
 
+const id = 18;
 const url = argv[2];
 
 request(url, (error, response, body) => {
@@ -12,7 +13,7 @@ request(url, (error, response, body) => {
     const data = JSON.parse(body).results;
     for (const key in data) {
       for (const item in data[key].characters) {
-        if (data[key].characters[item] === 'https://swapi-api.alx-tools.com/api/people/18/') {
+        if (data[key].characters[item].includes(`//swapi-api.alx-tools.com/api/people/${id}`)) {
           count += 1;
         }
       }
