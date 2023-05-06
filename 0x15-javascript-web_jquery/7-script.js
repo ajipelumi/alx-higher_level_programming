@@ -7,8 +7,5 @@ $.ajax({
   url: 'https://swapi-api.alx-tools.com/api/people/5/?format=json',
   success: (data) => {
     elem.text(data.name);
-  },
-  error: function () {
-    alert('Error loading character!');
   }
 });

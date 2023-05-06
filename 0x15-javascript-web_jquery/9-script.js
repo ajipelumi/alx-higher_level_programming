@@ -8,9 +8,6 @@ $(document).ready(function () {
     url: 'https://hellosalut.stefanbohacek.dev/?lang=fr',
     success: (data) => {
       elem.text(data.hello);
-    },
-    error: function () {
-      alert('Error');
     }
   });
 });

@@ -9,8 +9,5 @@ $.ajax({
     $.each(movies.results, (idx, movie) => {
       elem.append(`<li>${movie.title}</li>`);
     });
-  },
-  error: function () {
-    alert('Error loading titles!');
   }
 });
